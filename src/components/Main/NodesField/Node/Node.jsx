@@ -7,7 +7,7 @@ function Node() {
     e.target.classList.toggle(css.wall);
     e.target.parentNode.childNodes.forEach(node => {
       node.onmouseenter = () => {
-        node.classList.toggle(css.wall);
+        node.classList.add(css.wall);
       };
     });
   }

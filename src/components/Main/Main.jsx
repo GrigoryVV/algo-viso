@@ -1,7 +1,7 @@
 import React from 'react';
 import css from './Main.module.css'
 import CommentsContainer from './Comments/CommentsContainer';
-import NodesFieldContainer from './Node/NodesFieldContainer';
+import NodesFieldContainer from './NodesField/NodesFieldContainer';
 
 
 function Main(props) {
