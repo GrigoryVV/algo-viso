@@ -1,0 +1,29 @@
+.wrap {
+    grid-area: cp;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    font-size: 2rem;
+}
+
+.menu .btn {
+    cursor: pointer;
+    padding: 0.5rem;
+    padding-right: 0;
+    margin-right: 1rem;
+    border: 1px solid rgb(112, 180, 160);
+}
+
+.menu .btn+.btn {
+    border-top: none;
+}
+
+.menu .btn:hover{
+    background-color: rgb(217, 255, 244);
+}
+
+span.btn {
+    display: block;
+}

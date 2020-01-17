@@ -1,0 +1,7 @@
+.wrap {
+    grid-area: header;
+}
+
+.wrap h1 {
+    font-size: 2.4rem;
+}

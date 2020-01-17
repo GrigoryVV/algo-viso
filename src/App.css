@@ -1,0 +1,12 @@
+.App {
+  max-width: 1200px;
+  min-width: 600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 194px 1fr;
+  grid-template-rows: 60px 1fr;
+
+  grid-template-areas: 
+  "header header"
+  "cp main";
+}

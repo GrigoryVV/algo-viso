@@ -1,0 +1,11 @@
+.node {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  outline: 1px solid #ccc;
+  user-select: none;
+}
+
+.wall {
+  background-color: rgb(70, 70, 70);
+}
