@@ -1,23 +1,25 @@
+const SWITCH_MENU = 'SWITCH_MENU';
+
 let initialState = {
-    mazes: [
+    sorting: [
         {
             id: 0,
-            name: "Лабиринт 1" 
+            name: "Bubble Sort" 
         },
         {
             id: 1,
-            name: "Лабиринт 2" 
+            name: "Quick Sort" 
         },
         {
             id: 2,
-            name: "Лабиринт 3" 
+            name: "Choise Sort" 
         },
         {
             id: 3,
-            name: "Лабиринт 4" 
+            name: "Some Sort" 
         },
     ],
-    algorithms: [
+    pathFinding: [
         {
             id: 0,
             name: "Dijkstra's Algorithm" 
@@ -51,11 +53,29 @@ let initialState = {
             name: "Depth-first Search" 
         }
     ],
+    selectedAlgo: '',
+    menuIsOpen: false
 };
 
 function controlPanelReducer(state = initialState, action) {
+    switch(action.type) {
+        case SWITCH_MENU:
+            return state.menuIsOpen ? {
+                ...state,
+                menuIsOpen: false
+            } : {
+                ...state,
+                menuIsOpen: true
+            };
+        default:
+            return state;
+    }
+}
 
-    return state;
+export const switchMenuAC = () => {
+    return {
+      type: SWITCH_MENU
+    };
 }
 
 export default controlPanelReducer;

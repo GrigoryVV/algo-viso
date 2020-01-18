@@ -1,0 +1,5 @@
+.wrap {
+    grid-area: main;
+
+    margin-top: 20px;
+}

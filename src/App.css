@@ -10,3 +10,7 @@
   "header header"
   "cp main";
 }
+
+.hide {
+  display: none;
+}

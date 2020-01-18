@@ -8,7 +8,7 @@ function Choice(props) {
     });
 
     return (
-        <ul className={css.algo_choice}>
+        <ul className={`${props.className} ${css.algo_choice}`}>
             {listData}
         </ul>
     );

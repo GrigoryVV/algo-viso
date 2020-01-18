@@ -1,17 +1,28 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header/Header';
-import Main from './components/Main/Main'
-import ControlPanel from './components/ControlPanel/ControlPanel';
+import HeaderContainer from './components/Header/HeaderContainer';
+import SortAlgo from './components/SortAlgo/SortAlgo';
+// import PathAlgo from './components/PathAlgo/PathAlgo';
+import ControlPanelContainer from './components/ControlPanel/ControlPanelContainer';
+import { Route, Switch } from 'react-router-dom';
 
 
 
 function App(props) {
   return (
     <div className="App">
-      <Header/>
-      <ControlPanel store={props.store}/>
-      <Main/>
+      <HeaderContainer/>
+      <ControlPanelContainer/>
+      <Switch>
+        <Route path="/sorting">
+          <SortAlgo />
+        </Route>
+        <Route path="/pathfinding">
+          <div>
+            Under Construction
+          </div>
+        </Route>
+      </Switch>
     </div>
   );
 }

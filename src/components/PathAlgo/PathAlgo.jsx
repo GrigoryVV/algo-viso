@@ -1,10 +1,10 @@
 import React from 'react';
-import css from './Main.module.css'
+import css from './PathAlgo.module.css'
 import CommentsContainer from './Comments/CommentsContainer';
 import NodesFieldContainer from './NodesField/NodesFieldContainer';
 
 
-function Main(props) {
+function PathAlgo(props) {
   return (
     <div className={css.wrap}>
       <NodesFieldContainer />
@@ -13,4 +13,4 @@ function Main(props) {
   );
 }
 
-export default Main;
+export default PathAlgo;
