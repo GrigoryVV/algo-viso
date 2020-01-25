@@ -1,8 +1,9 @@
 .field {
   box-sizing: border-box;
   width: 100%;
-  border: 3px double #999;
+  border: 3px double #B9B1C3;
   height: 506px;
+  background-color: seashell;
 
   display: flex;
   align-items: flex-end;

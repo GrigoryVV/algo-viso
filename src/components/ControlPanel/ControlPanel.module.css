@@ -8,10 +8,14 @@
     font-size: 2rem;
 }
 
+.menu li {
+    background-color: seashell;
+}
+
 .menu .btn {
     cursor: pointer;
     margin-right: 1rem;
-    border: 1px solid rgb(31, 84, 255);
+    border: 1px solid #B9B1C3;
 }
 
 .menu .btn+.btn {
@@ -19,7 +23,7 @@
 }
 
 .hover_btn:hover{
-    background-color: rgb(202, 214, 255);
+    background-color: #E3B18A;
 }
 
 span.hover_btn {
@@ -30,4 +34,14 @@ span.hover_btn {
 
 .hide {
     display: none;
+}
+
+.controls_off {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0; 
+    z-index: 10;
+    background-color: rgba(28, 16, 55, 0.445)
 }

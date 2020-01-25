@@ -3,3 +3,11 @@
     padding: 0.5rem 1rem 0.5rem 4rem;
     font-size: 1.8rem;
 }
+
+.active {
+    color: #A23050;
+}
+
+.algo_choice li:hover {
+    text-decoration: underline;
+}

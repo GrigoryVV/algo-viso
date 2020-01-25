@@ -1,7 +1,7 @@
-function bubbleSort(state) {
+function choiseSort(state) {
     let len = state.poles.length;
-    let firstIter = 1;
-    let secondIter = 0;
+    let firstIter = 0;
+    let secondIter = firstIter + 1;
     let changedState;
     if (state.isSorted) return state;
     if (state.isStart) {
@@ -10,17 +10,18 @@ function bubbleSort(state) {
             poles: [...state.poles],
             firstIter: firstIter,
             secondIter: secondIter,
-            firstIterLimit: len,
-            secondIterLimit: len - firstIter,
+            firstIterLimit: len - 1,
+            secondIterLimit: len,
             isStart: false
         };
         changedState.redId = changedState.poles[secondIter].index;
+        changedState.greenId = changedState.poles[firstIter].index;
     } else {
         secondIter = state.secondIter + 1;
         if (secondIter >= state.secondIterLimit) {
-            secondIter = 0;
             firstIter = state.firstIter + 1;
-            if (firstIter === len) return {
+            secondIter = firstIter + 1;
+            if (firstIter === len - 1) return {
                 ...state,
                 firstIter: -1,
                 secondIter: -1,
@@ -36,20 +37,18 @@ function bubbleSort(state) {
             ...state,
             poles: [...state.poles],
             firstIter: firstIter,
-            secondIter: secondIter,
-            secondIterLimit: len - firstIter
+            secondIter: secondIter
         };
-    }
-    
-    if (changedState.poles[secondIter].value > changedState.poles[secondIter + 1].value) {
-        let temp = changedState.poles[secondIter];
-        changedState.poles[secondIter] = changedState.poles[secondIter + 1];
-        changedState.poles[secondIter + 1] = temp;
-    } else {
-        changedState.redId = changedState.poles[secondIter + 1].index;
+        changedState.redId = changedState.poles[secondIter].index;
+        changedState.greenId = changedState.poles[firstIter].index;
     }
 
+    if (changedState.poles[secondIter].value < changedState.poles[firstIter].value) {
+        let temp = changedState.poles[secondIter];
+        changedState.poles[secondIter] = changedState.poles[firstIter];
+        changedState.poles[firstIter] = temp;
+    }
     return changedState;
 }
 
-export default bubbleSort;
+export default choiseSort;

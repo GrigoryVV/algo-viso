@@ -2,9 +2,10 @@ import React from 'react';
 import css from './Pole.module.css'
 
 function Pole(props) {
+  let color = props.color !== undefined ? props.color : '';
 
   return (
-    <div className={css.pole} style={{height: props.value + 'px'}}>
+    <div className={`${color} ${css.pole}`} style={{height: props.value + 'px'}}>
 
     </div>
   );

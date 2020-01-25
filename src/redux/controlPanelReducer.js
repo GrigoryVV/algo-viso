@@ -1,4 +1,6 @@
 const SWITCH_MENU = 'SWITCH_MENU';
+const SELECT_SORT_TYPE = 'SELECT_SORT_TYPE';
+const SWITCH_CONTROLS = 'SWITCH_CONTROLS';
 
 let initialState = {
     sorting: [
@@ -16,8 +18,12 @@ let initialState = {
         },
         {
             id: 3,
-            name: "Some Sort" 
+            name: "Insert Sort" 
         },
+        {
+            id: 4,
+            name: "Merge Sort" 
+        }
     ],
     pathFinding: [
         {
@@ -54,7 +60,8 @@ let initialState = {
         }
     ],
     selectedAlgo: '',
-    menuIsOpen: false
+    menuIsOpen: false,
+    busy: false
 };
 
 function controlPanelReducer(state = initialState, action) {
@@ -67,6 +74,19 @@ function controlPanelReducer(state = initialState, action) {
                 ...state,
                 menuIsOpen: true
             };
+        case SELECT_SORT_TYPE:
+            return {
+                ...state,
+                selectedAlgo: action.sortName
+            };
+        case SWITCH_CONTROLS:
+            return state.busy ? {
+                ...state,
+                busy: false
+            } : {
+                ...state,
+                busy: true
+            };
         default:
             return state;
     }
@@ -75,6 +95,19 @@ function controlPanelReducer(state = initialState, action) {
 export const switchMenuAC = () => {
     return {
       type: SWITCH_MENU
+    };
+}
+
+export const selectSortTypeAC = (sortName) => {
+    return {
+      type: SELECT_SORT_TYPE,
+      sortName: sortName
+    };
+}
+
+export const switchControlsAC = () => {
+    return {
+      type: SWITCH_CONTROLS
     };
 }
 

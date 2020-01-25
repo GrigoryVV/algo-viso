@@ -18,7 +18,7 @@ function App(props) {
           <SortAlgo />
         </Route>
         <Route path="/pathfinding">
-          <div>
+          <div className='notificationMSG'>
             Under Construction
           </div>
         </Route>

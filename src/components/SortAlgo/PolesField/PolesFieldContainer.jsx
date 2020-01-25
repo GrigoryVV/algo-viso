@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 
 let mapStateToProps= (state) => {
   return {
-    poles: state.sortAlgo.poles
+    poles: state.sortAlgo.poles,
+    redId: state.sortAlgo.redId,
+    greenId: state.sortAlgo.greenId
   };
 }
 
