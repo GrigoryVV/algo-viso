@@ -1,35 +1,38 @@
 let stepsList = [];
 
-function merge(array, lStart, rStart, lEnd, rEnd) {
+function merge(array, lStart, lEnd) {
     
+    let lDelta = lEnd - lStart;
+
     let i = 0,
-        k = 0;
-    while (i < lEnd && k < rEnd) {
-        debugger
+        k = lDelta,
+        limit = lDelta;
+
+    while (i < limit && k < array.length) {
         if (array[k].value < array[i].value) {
             array = array.slice(0, i).concat(
                 array.slice(k, k+1),
-                array.slice(i, lEnd),
+                array.slice(i, limit),
                 array.slice(k+1)
             );
             stepsList.push({
-                from: k + rStart,
+                from: k + lStart,
                 to: i + lStart,
                 did: true
             });
+            limit++;
             i++;
             k++;
         } else {
             stepsList.push({
-                from: k + rStart,
+                from: i + lStart,
                 to: i + lStart,
                 did: false
             });
-            k++;
             i++;
         }
     }
-    while (i < lEnd) {
+    while (i < limit) {
         stepsList.push({
             from: i + lStart,
             to: i + lStart,
@@ -37,10 +40,10 @@ function merge(array, lStart, rStart, lEnd, rEnd) {
         });
         i++;
     }
-    while (k < rEnd) {
+    while (k < array.length) {
         stepsList.push({
-            from: k + rStart,
-            to: k + rStart,
+            from: k + lStart,
+            to: k + lStart,
             did: false
         });
         k++;
@@ -55,7 +58,7 @@ function mergeSort(array, start=0, end=array.length) {
     let middle = Math.floor(array.length / 2);
     let leftArray = [];
     let leftStart = start;
-    let leftEnd = middle;
+    let leftEnd = start + middle;
     let rightArray = [];
     let rightStart = start + middle;   
     let rightEnd = end;   
@@ -71,7 +74,7 @@ function mergeSort(array, start=0, end=array.length) {
     mergeSort(rightArray, rightStart, rightEnd);
 
     let arrayToMerge = leftArray.concat(rightArray);
-    let sortedArray = merge(arrayToMerge, leftStart, rightStart, leftEnd, rightEnd);
+    let sortedArray = merge(arrayToMerge, leftStart, leftEnd);
     for (let i = 0; i < array.length; i++) {
         array[i] = sortedArray[i];
     }
@@ -82,7 +85,10 @@ function mergeSortManager(state) {
 
     let changedState;
 
-    if (state.isSorted) return state;
+    if (state.isSorted) {
+        stepsList = [];
+        return state;
+    }
 
     if (state.isStart) {
         let arrayToSort = [...state.poles];
@@ -92,18 +98,17 @@ function mergeSortManager(state) {
             poles:[...state.poles],
             firstIter: 0,
             isStart: false
-        }
+        };
     } else {
         changedState = {
             ...state,
             poles:[...state.poles],
             firstIter: state.firstIter + 1
-        }
+        };
         if (changedState.firstIter >= stepsList.length) {
             stepsList = [];
             return {
                 ...state,
-                // poles:[...state.poles],
                 firstIter: -1,
                 secondIter: -1,
                 thirdIter: -1,
