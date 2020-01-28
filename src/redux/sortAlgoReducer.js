@@ -2,6 +2,7 @@ import bubbleSort from "../Algorithms/bubbleSort";
 import choiseSort from "../Algorithms/choiceSort";
 import insertSort from "../Algorithms/insertSort";
 import mergeSortManager from "../Algorithms/mergeSort";
+import quickSortManager from "../Algorithms/quickSort";
 
 const MIX_POLES = 'MIX_POLES'
 const VISUALIZE_SORT = 'VISUALIZE_SORT';
@@ -11,6 +12,7 @@ const BUBBLE_SORT = 'Bubble Sort';
 const CHOISE_SORT = 'Choise Sort';
 const INSERT_SORT = 'Insert Sort';
 const MERGE_SORT = 'Merge Sort';
+const QUICK_SORT = 'Quick Sort';
 
 let poles = [];
 
@@ -30,6 +32,7 @@ let initialState = {
     secondIterLimit: 0,
     redId: -1,
     greenId: -1,
+    blueId: -1,
     isStart: true,
     isSorted: true
 };
@@ -57,6 +60,8 @@ function sortAlgoReducer(state = initialState, action) {
                     return insertSort(state);
                 case MERGE_SORT:
                     return mergeSortManager(state);
+                case QUICK_SORT:
+                    return quickSortManager(state);
                 default:
                     return state;
             }

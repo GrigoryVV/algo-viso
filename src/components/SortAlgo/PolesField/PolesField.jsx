@@ -10,6 +10,8 @@ function PolesField(props) {
       return <Pole key={pole.index} color='red' value={pole.value} />
     } else if (pole.index === props.greenId) {
       return <Pole key={pole.index} color='green' value={pole.value} />
+    } else if (pole.index === props.blueId) {
+      return <Pole key={pole.index} color='blue' value={pole.value} />
     } else {
       return <Pole key={pole.index} value={pole.value} />
     }

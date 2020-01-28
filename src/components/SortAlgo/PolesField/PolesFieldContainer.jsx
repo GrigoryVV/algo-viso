@@ -5,7 +5,8 @@ let mapStateToProps= (state) => {
   return {
     poles: state.sortAlgo.poles,
     redId: state.sortAlgo.redId,
-    greenId: state.sortAlgo.greenId
+    greenId: state.sortAlgo.greenId,
+    blueId: state.sortAlgo.blueId
   };
 }
 

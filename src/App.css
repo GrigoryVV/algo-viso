@@ -23,6 +23,10 @@ div.green {
   background-color: #45A230;
 }
 
+div.blue {
+  background-color: rgb(110, 65, 216);
+}
+
 .notificationMSG {
   font-size: 3rem;
   margin: 3rem auto;
