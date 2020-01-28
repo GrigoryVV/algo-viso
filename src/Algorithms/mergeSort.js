@@ -1,8 +1,8 @@
 let stepsList = [];
 
-function merge(array, lStart, lEnd) {
+function merge(array, lStart, rStart) {
     
-    let lDelta = lEnd - lStart;
+    let lDelta = rStart - lStart;
 
     let i = 0,
         k = lDelta,
@@ -51,17 +51,17 @@ function merge(array, lStart, lEnd) {
     return array;
 }
 
-function mergeSort(array, start=0, end=array.length) {
+function mergeSort(array, start=0) {
     if (array.length <= 1) {
         return array;
     }
     let middle = Math.floor(array.length / 2);
     let leftArray = [];
     let leftStart = start;
-    let leftEnd = start + middle;
+    
     let rightArray = [];
     let rightStart = start + middle;   
-    let rightEnd = end;   
+   
 
     for (let i = 0; i < middle; i++) {
         leftArray.push(array[i]);
@@ -70,11 +70,11 @@ function mergeSort(array, start=0, end=array.length) {
         rightArray.push(array[i]);
     }
 
-    mergeSort(leftArray, leftStart, leftEnd);
-    mergeSort(rightArray, rightStart, rightEnd);
+    mergeSort(leftArray, leftStart);
+    mergeSort(rightArray, rightStart);
 
     let arrayToMerge = leftArray.concat(rightArray);
-    let sortedArray = merge(arrayToMerge, leftStart, leftEnd);
+    let sortedArray = merge(arrayToMerge, leftStart, rightStart);
     for (let i = 0; i < array.length; i++) {
         array[i] = sortedArray[i];
     }
