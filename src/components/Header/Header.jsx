@@ -15,8 +15,8 @@ function Header(props) {
     <header className={css.wrap}>
       <h1>Визуализатор алгоритмов</h1>
       <nav className={css.nav_wrap}>
-        <NavLink to="/sorting" className={css.nav_link} activeClassName={css.active} onClick={selectSorting} >Cортировка</NavLink>
-        <NavLink to="/pathfinding" className={css.nav_link} activeClassName={css.active} onClick={selectPathFind} >Поиск пути</NavLink>
+        <NavLink to="/algo-viso/sorting" className={css.nav_link} activeClassName={css.active} onClick={selectSorting} >Cортировка</NavLink>
+        <NavLink to="/algo-viso/pathfinding" className={css.nav_link} activeClassName={css.active} onClick={selectPathFind} >Поиск пути</NavLink>
       </nav>
     </header>
   );
