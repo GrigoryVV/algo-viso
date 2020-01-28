@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/algo-viso/static/css/main.02066507.chunk.css",
-    "main.js": "/algo-viso/static/js/main.eac8033a.chunk.js",
-    "main.js.map": "/algo-viso/static/js/main.eac8033a.chunk.js.map",
+    "main.js": "/algo-viso/static/js/main.bf13c4fd.chunk.js",
+    "main.js.map": "/algo-viso/static/js/main.bf13c4fd.chunk.js.map",
     "runtime-main.js": "/algo-viso/static/js/runtime-main.90cdce4f.js",
     "runtime-main.js.map": "/algo-viso/static/js/runtime-main.90cdce4f.js.map",
     "static/js/2.1ee1d66f.chunk.js": "/algo-viso/static/js/2.1ee1d66f.chunk.js",
     "static/js/2.1ee1d66f.chunk.js.map": "/algo-viso/static/js/2.1ee1d66f.chunk.js.map",
     "index.html": "/algo-viso/index.html",
-    "precache-manifest.fa0c8c17e9e1ec9777283ae910c79cef.js": "/algo-viso/precache-manifest.fa0c8c17e9e1ec9777283ae910c79cef.js",
+    "precache-manifest.ce74117d09f1507115defaf8960b77f9.js": "/algo-viso/precache-manifest.ce74117d09f1507115defaf8960b77f9.js",
     "service-worker.js": "/algo-viso/service-worker.js",
     "static/css/main.02066507.chunk.css.map": "/algo-viso/static/css/main.02066507.chunk.css.map",
     "static/js/2.1ee1d66f.chunk.js.LICENSE": "/algo-viso/static/js/2.1ee1d66f.chunk.js.LICENSE"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.90cdce4f.js",
     "static/js/2.1ee1d66f.chunk.js",
     "static/css/main.02066507.chunk.css",
-    "static/js/main.eac8033a.chunk.js"
+    "static/js/main.bf13c4fd.chunk.js"
   ]
 }
