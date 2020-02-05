@@ -7,20 +7,13 @@ import * as serviceWorker from './serviceWorker';
 import store from './redux/reduxStore';
 import {Provider} from 'react-redux';
 
+ReactDOM.render(
+    <BrowserRouter basename="/algo-viso">
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </BrowserRouter>, document.getElementById('root'));
 
-
-
-function renderEntireTree() {
-    ReactDOM.render(
-        <BrowserRouter>
-            <Provider store={store}>
-                <App />
-            </Provider>
-        </BrowserRouter>, document.getElementById('root'));
-}
-renderEntireTree();
-
-store.subscribe(renderEntireTree);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

@@ -3,7 +3,7 @@ import './App.css';
 import HeaderContainer from './components/Header/HeaderContainer';
 import SortAlgo from './components/SortAlgo/SortAlgo';
 import ControlPanelContainer from './components/ControlPanel/ControlPanelContainer';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 
 
@@ -13,10 +13,13 @@ function App(props) {
       <HeaderContainer/>
       <ControlPanelContainer/>
       <Switch>
-        <Route path="/algo-viso/sorting">
+        <Route exact path="/">
+          <Redirect to="/sorting"/>
+        </Route>
+        <Route path="/sorting">
           <SortAlgo />
         </Route>
-        <Route path="/algo-viso/pathfinding">
+        <Route path="/pathfinding">
           <div className='notificationMSG'>
             Under Construction
           </div>
